@@ -1,0 +1,25 @@
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+// Need 1.5 to work on MacOS X 10.4.11
+sourceCompatibility = 1.5
+version = '1.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'LookAndFeelEnumerator',
+                   'Implementation-Version': version,
+		   'Main-Class': 'com.alteredmechanism.lslaf.LookAndFeelEnumerator'
+    }
+}
+
+eclipse {
+    classpath {
+        defaultOutputDir = file("build/classes/main")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
